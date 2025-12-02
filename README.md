@@ -131,3 +131,8 @@ npm run build
 ## 📄 许可证 (License)
 
 Distributed under the MIT License. See `LICENSE` for more information.
+
+<div align="center">
+  <p>Copyright © 2025 <b>movecall</b>. All Rights Reserved.</p>
+  <p>Made with ❤️ by movecall</p>
+</div>
