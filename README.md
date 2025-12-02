@@ -6,6 +6,7 @@
 
 **电子工具箱 (Electronics Toolkit)** 是一款专为电子工程师、学生和爱好者设计的专业网页应用。它集成了常用的电子电路计算工具，提供直观的图形化界面、实时计算功能以及交互式图表。
 
+![电子工具箱](images/photo.png "电子工具箱")
 🔗 **在线演示**: [点击这里访问 GitHub Pages 部署版本](https://movecall.github.io/electronics-toolkit/) 
 
 ---
