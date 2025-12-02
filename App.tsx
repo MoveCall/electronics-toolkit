@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { Plus, HelpCircle, Calculator, Zap, Activity, DivideCircle, Lightbulb, Box, Waves, Battery, Palette } from 'lucide-react';
+import { Plus, HelpCircle, Calculator, Zap, Activity, DivideCircle, Lightbulb, Box, Waves, Battery, Palette, Eye, User } from 'lucide-react';
 import { ResistorRow } from './components/ResistorRow';
 import { Visualization } from './components/Visualization';
 import { VoltageDivider } from './components/VoltageDivider';
@@ -27,6 +27,23 @@ function App() {
     { id: generateId(), value: 100, multiplier: UnitMultiplier.Ohm },
     { id: generateId(), value: 200, multiplier: UnitMultiplier.Ohm },
   ]);
+
+  // Load Busuanzi Script for Statistics
+  useEffect(() => {
+    // Check if script already exists to avoid duplicates
+    if (document.getElementById('busuanzi-script')) return;
+
+    const script = document.createElement('script');
+    script.src = "//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js";
+    script.async = true;
+    script.id = 'busuanzi-script';
+    document.body.appendChild(script);
+
+    return () => {
+      // Cleanup is generally not needed for global stats scripts, but good practice
+      // document.body.removeChild(script); 
+    };
+  }, []);
 
   // Handler to add resistor
   const addResistor = () => {
@@ -476,13 +493,23 @@ function App() {
       </main>
 
       <footer className="bg-white border-t border-slate-200 py-8 mt-auto">
-         <div className="max-w-5xl mx-auto px-4 text-center">
-            <p className="text-slate-500 text-sm">
-                Copyright © 2025 <span className="font-bold text-slate-700">movecall</span>. All Rights Reserved.
-            </p>
-            <p className="text-slate-400 text-xs mt-2">
-                Made with ❤️ for Electronics Engineers
-            </p>
+         <div className="max-w-5xl mx-auto px-4 flex flex-col items-center gap-4">
+            <div className="text-slate-500 text-sm text-center">
+                <p>Copyright © 2025 <span className="font-bold text-slate-700">movecall</span>. All Rights Reserved.</p>
+                <p className="text-slate-400 text-xs mt-1">Made with ❤️ for Electronics Engineers</p>
+            </div>
+            
+            {/* Busuanzi Statistics */}
+            <div className="flex items-center gap-6 text-xs text-slate-400 font-medium">
+                <span id="busuanzi_container_site_pv" className="flex items-center gap-1.5" style={{ display: 'none' }}>
+                    <Eye size={14} className="text-slate-400" />
+                    访问量: <span id="busuanzi_value_site_pv" className="text-slate-600">--</span>
+                </span>
+                <span id="busuanzi_container_site_uv" className="flex items-center gap-1.5" style={{ display: 'none' }}>
+                    <User size={14} className="text-slate-400" />
+                    访客数: <span id="busuanzi_value_site_uv" className="text-slate-600">--</span>
+                </span>
+            </div>
          </div>
       </footer>
     </div>
