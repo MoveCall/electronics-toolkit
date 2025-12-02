@@ -4,7 +4,7 @@
 
 ![Status](https://img.shields.io/badge/Status-Active-success)
 ![Tech](https://img.shields.io/badge/Built%20With-React%20%7C%20Vite%20%7C%20Tailwind-blue)
-![Visitors](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fmovecall%2Felectronics-toolkit&count_bg=%237C3AED&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visitors&edge_flat=false)
+
 
 
 **电子工具箱 (Electronics Toolkit)** 是一款专为电子工程师、学生和爱好者设计的专业网页应用。它集成了常用的电子电路计算工具，提供直观的图形化界面、实时计算功能以及交互式图表。
